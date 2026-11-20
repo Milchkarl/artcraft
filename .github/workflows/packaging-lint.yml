@@ -3,11 +3,6 @@
 name: Packaging lint
 
 on:
-  push:
-    branches: [main, release]
-    paths: [".github/workflows/**", "packaging/**"]
-  pull_request:
-    paths: [".github/workflows/**", "packaging/**"]
   workflow_dispatch:
 
 permissions:

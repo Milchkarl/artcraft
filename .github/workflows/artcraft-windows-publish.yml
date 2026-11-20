@@ -1,18 +1,7 @@
 name: "Artcraft Windows Publish"
 
 on:
-  push:
-    branches:
-      - release
-      - artcraft-release
-      - artcraft-windows  # Additional branch for Windows testing
-
-# This workflow creates Windows builds.
-# On each push to the release branches it will create or update a GitHub release, build your app, and upload the artifacts to the release.
-
-# One release build per branch at a time. A run in progress is never cancelled, because it may
-# already have created or uploaded to the draft release. If more pushes arrive while one runs,
-# GitHub keeps only the newest as pending, so the next build is of the latest commit.
+  workflow_dispatch:
 concurrency:
   group: windows-release-${{ github.ref }}
   cancel-in-progress: false
